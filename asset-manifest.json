@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/reactResto/static/css/main.bf7aa4f6.chunk.css",
+    "main.js": "/reactResto/static/js/main.34b3d9dc.chunk.js",
+    "main.js.map": "/reactResto/static/js/main.34b3d9dc.chunk.js.map",
+    "runtime-main.js": "/reactResto/static/js/runtime-main.97ef8fba.js",
+    "runtime-main.js.map": "/reactResto/static/js/runtime-main.97ef8fba.js.map",
+    "static/js/2.81b96aa5.chunk.js": "/reactResto/static/js/2.81b96aa5.chunk.js",
+    "static/js/2.81b96aa5.chunk.js.map": "/reactResto/static/js/2.81b96aa5.chunk.js.map",
+    "index.html": "/reactResto/index.html",
+    "precache-manifest.d63b527a72311bc25cc7e150d576accd.js": "/reactResto/precache-manifest.d63b527a72311bc25cc7e150d576accd.js",
+    "service-worker.js": "/reactResto/service-worker.js",
+    "static/css/main.bf7aa4f6.chunk.css.map": "/reactResto/static/css/main.bf7aa4f6.chunk.css.map",
+    "static/js/2.81b96aa5.chunk.js.LICENSE.txt": "/reactResto/static/js/2.81b96aa5.chunk.js.LICENSE.txt",
+    "static/media/landing-page-style.css": "/reactResto/static/media/steak1.026b52bf.jpg",
+    "static/media/prdc1.jpg": "/reactResto/static/media/prdc1.9b4bee42.jpg",
+    "static/media/prdc2.jpg": "/reactResto/static/media/prdc2.4d5401b2.jpg",
+    "static/media/prdc3.jpg": "/reactResto/static/media/prdc3.d6bf94fc.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.97ef8fba.js",
+    "static/js/2.81b96aa5.chunk.js",
+    "static/css/main.bf7aa4f6.chunk.css",
+    "static/js/main.34b3d9dc.chunk.js"
+  ]
+}
