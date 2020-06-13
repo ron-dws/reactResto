@@ -1,0 +1,347 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.img-prdcs{
+    width:300px;
+    height:250px;
+}
+/*Nav bar*/
+.nav-mobile{
+    display:none;
+}
+.nav-bar-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    width: 100%;
+    background-color: rgba(2, 29, 37, 0.46);
+    position: absolute;
+}
+
+.ul-nav-bar-main {
+   display: flex;
+   width: 100%;
+   justify-content: center;
+}
+
+.li-nav-bar-main {
+   display: flex;
+   padding: 1rem;
+   transition: .3s linear;
+}
+
+a {
+    text-decoration: none;
+    color: greenyellow;
+}
+
+.li-nav-bar-main:hover{
+    background: dodgerblue;
+    color: white;
+    cursor: pointer;
+    transition: .6s ease;
+}
+
+/*Section 1*/
+.section-1{
+    color: rgba(255, 255, 255, 0.922); /*rgba(245, 194, 6, 0.922); */
+    font-size: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-350%,-50%); */
+    transform: translate(-400%,-50%);
+    
+}
+
+.h1-main-cl{
+    /* transform: translateX(300%); */
+    transform: translate(-50%,-50%);
+    transition: 1s ease;
+}
+
+.section-1-btn{
+        border: 1px solid orange;
+        padding: 1rem;
+        width: 12rem;
+        /* position: absolute;
+        transform: translate(-50%,589%); */
+        background: none;
+        color: white;
+        font-size: 18px;
+        cursor:pointer;
+        opacity: 0;
+        transition: .7s ease;
+}
+
+.section-1-btn:hover{
+    background: rgba(75, 53, 13, 0.77);
+}
+
+.main-body-section-1{
+    /* padding: .5rem 0; */
+    position:relative;
+    height: 100vh;
+    background-image: url("../Img/steak1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    /* border: 1px solid blue; */
+    /* animation: moveTitle 2s linear; */
+    /* animation-play-state: paused; */
+}
+
+.hr-bar{
+   background-color:red;
+   height: 8px;
+}
+
+.h1-section-2{
+    padding: 0 0 10px 0;
+    color: #dc8f00;
+}
+.main-body-section-2{
+    /* padding: .5rem 0; */
+    padding-bottom: 0;
+    /* border: 1px solid rgb(85, 15, 39); */
+    min-height: 300px;
+}
+
+.section-2{
+    display:flex;
+    min-height: 500px;
+    justify-content: space-around;
+}
+
+.section-2-left{
+   /* border: 1px solid rgb(25, 148, 35); */
+   background-image: url("../Img/burger1.jpg");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   width:100%;
+}
+
+.section-2-right{
+    /* border: 1px solid rgb(119, 17, 85); */
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+}
+
+.section-2-right-p{
+    padding: .5rem 5rem;
+}
+
+/* Registration Form */
+.register-form{
+    margin: 1rem 0;
+}
+
+input[type="text"].input-form{
+    width: 16rem;
+    height: 3rem;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin-top: .5rem;
+    font-size: 1rem;
+    box-shadow: 2px 4px grey;
+}
+
+button.form-btn{
+    width: 13rem;
+    padding: .5rem;
+    margin-top: 1rem;
+    color: white;
+    background-color: rgba(146, 107, 4, 0.96);
+    border-radius: 25px;
+    border: 2px solid rgba(146, 107, 4, 0.96);
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+@keyframes moveTitle{
+    from {
+        transform: translateX(-100px);
+    }to{
+        transform: translateX(200px);
+    }
+}
+
+/* footer */ 
+.my-footer{
+    display: flex;
+    padding: 2rem;
+    justify-content: space-around;
+    background: rgb(12, 1, 49);
+    color: #ffff;
+    /* position: absolute; */
+    width: 100%;
+    bottom: 0px;
+}
+
+ul li.li-my-footer {
+    list-style: none;
+}
+
+ul li.li-my-footer a {
+    text-decoration: none;
+    color: rgb(188, 252, 243);
+}
+
+li.li-my-footer{
+    text-align:left;
+}
+
+.footer-col-2{
+    margin-left: 4rem;
+    color: rgba(252, 252, 252, 1);
+    transform: translateY(-1.5rem);
+}
+
+.footer-col-2 p{
+    font-size: 12px;
+    padding: .5rem;
+    max-width: 15rem;
+    text-align: justify;
+}
+
+/*Products*/
+/*Products Filter Cmd*/
+.ul-filter-prdc{
+    display: flex;
+    list-style: none;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+.ul-filter-prdc li{
+    margin: 0 .5rem;
+}
+
+#prdc-filter-display{
+    min-width: 200px;
+    height: 3rem;
+    font-size: 18px;
+}
+
+.input-prdc-search{
+    min-width: 200px;
+    height: 3rem;
+    padding-left: 5px;
+    font-size: 18px;
+}
+/*Products Display*/
+.ul-all-products{
+    display: flex;
+    list-style: none;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+.li-each-product{
+    border: 1px solid gray;
+    padding: 10px;
+    min-height: 250px;
+
+}
+
+.short-description{
+   font-size: 12px;
+}
+
+.a-prdc-detail{
+  float:left;
+}
+
+.prdc-price{
+  float:right;
+}
+
+/*----------------- On Mobile Devices ---------------*/
+@media (max-width: 700px){
+
+    body {
+        overflow-x: hidden !important;
+    }
+    .container {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    .nav-bar-main {
+        padding-top: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 4;
+        width: 100%;
+        background-color: rgba(2, 29, 37, 0.46);
+        position: absolute;
+        /* animation: anim 2s forwards; */
+     }
+    .nav-mobile{
+        width: 100%;
+        padding: 10px;
+        background-color: blue;
+        display:block;
+        top: 0;
+        z-index: 5;
+        position: absolute;
+    }
+
+    .fa-bars{
+        color:white;
+        font-size: 1.5rem;
+        float: right;
+    }
+    .nav-mobile:hover{
+        animation-play-state: running;
+    }
+    .ul-nav-bar-main-mobile{
+        display:flex;
+        /* flex-direction: column; */
+    }
+    .ul-nav-bar-main  {
+        display: none;
+     }
+
+     ul#ulid-nav-bar-main{
+         width: 100%
+     }
+     
+     .li-nav-bar-main{
+        animation: anim .8s forwards;
+        justify-content: center;
+        border-bottom: .5px solid gray;
+        margin: 0 2%;
+     }
+     
+     .main-body-section-1{
+         height: 100vh;
+     }
+
+     .section-1{
+        font-size: 28px;
+        color: rgba(255, 255, 255, 0.94);
+     }
+
+     .section-1-btn{     
+         width: 8rem;
+         /* position: absolute;
+         transform: translate(-50%,437%); */
+     }
+
+     @keyframes anim {
+        from{ transform: translateY(-200px); }
+        to{ transform: translateY(0);}
+    }
+     
+}

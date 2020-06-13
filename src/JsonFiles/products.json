@@ -1,0 +1,12 @@
+[{
+  "productName":"Jordan",
+  "productPrice":400,
+  "productImg":"https://i.picsum.photos/id/67/250/150.jpg",
+  "productDate":"11/04/2020"
+},
+{
+    "productName":"",
+    "productPrice":"",
+    "productImg":"https://i.picsum.photos/id/70/250/150.jpg",
+    "productDate":"06/10/2020"
+}]
