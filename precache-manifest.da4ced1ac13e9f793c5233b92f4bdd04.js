@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "40c4a69fe71031d624331e81101ca92b",
+    "revision": "42432aed00fb1a9a9aab63eb2f906ded",
     "url": "/reactResto/index.html"
   },
   {
-    "revision": "9bd018561c00e85df64c",
-    "url": "/reactResto/static/css/main.c1865ffd.chunk.css"
+    "revision": "dec85a527bc2580ef07f",
+    "url": "/reactResto/static/css/main.86506675.chunk.css"
   },
   {
     "revision": "6d07af6a2a414d993efa",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reactResto/static/js/2.7014bad1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9bd018561c00e85df64c",
-    "url": "/reactResto/static/js/main.3c1afdad.chunk.js"
+    "revision": "dec85a527bc2580ef07f",
+    "url": "/reactResto/static/js/main.a1fb4e10.chunk.js"
   },
   {
     "revision": "0ad547421a6ca374816e",
@@ -30,18 +30,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d8e0bb7487fe72ee4c432ed24f4ebc45",
     "url": "/reactResto/static/media/greenCheck.d8e0bb74.png"
-  },
-  {
-    "revision": "9b4bee4243bcc43221f1fb7599bc3e8a",
-    "url": "/reactResto/static/media/prdc1.9b4bee42.jpg"
-  },
-  {
-    "revision": "4d5401b23143b6fa17fda5821852c80d",
-    "url": "/reactResto/static/media/prdc2.4d5401b2.jpg"
-  },
-  {
-    "revision": "d6bf94fca56f390a55cf945b9671498e",
-    "url": "/reactResto/static/media/prdc3.d6bf94fc.jpg"
   },
   {
     "revision": "026b52bfabf394f131c24dbd522aefb3",
