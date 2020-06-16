@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/reactResto/static/css/main.79564887.chunk.css",
-    "main.js": "/reactResto/static/js/main.ae2cefdc.chunk.js",
-    "main.js.map": "/reactResto/static/js/main.ae2cefdc.chunk.js.map",
+    "main.css": "/reactResto/static/css/main.b38f7843.chunk.css",
+    "main.js": "/reactResto/static/js/main.9aa5f6f2.chunk.js",
+    "main.js.map": "/reactResto/static/js/main.9aa5f6f2.chunk.js.map",
     "runtime-main.js": "/reactResto/static/js/runtime-main.97ef8fba.js",
     "runtime-main.js.map": "/reactResto/static/js/runtime-main.97ef8fba.js.map",
     "static/js/2.7014bad1.chunk.js": "/reactResto/static/js/2.7014bad1.chunk.js",
     "static/js/2.7014bad1.chunk.js.map": "/reactResto/static/js/2.7014bad1.chunk.js.map",
     "index.html": "/reactResto/index.html",
-    "precache-manifest.e444dfb3c32538a0dccbaabfba27dbcf.js": "/reactResto/precache-manifest.e444dfb3c32538a0dccbaabfba27dbcf.js",
+    "precache-manifest.a5388c30f6eae9f3f883d9b5ea7aa579.js": "/reactResto/precache-manifest.a5388c30f6eae9f3f883d9b5ea7aa579.js",
     "service-worker.js": "/reactResto/service-worker.js",
-    "static/css/main.79564887.chunk.css.map": "/reactResto/static/css/main.79564887.chunk.css.map",
+    "static/css/main.b38f7843.chunk.css.map": "/reactResto/static/css/main.b38f7843.chunk.css.map",
     "static/js/2.7014bad1.chunk.js.LICENSE.txt": "/reactResto/static/js/2.7014bad1.chunk.js.LICENSE.txt",
     "static/media/landing-page-style.css": "/reactResto/static/media/steak1.026b52bf.jpg",
     "static/media/greenCheck.png": "/reactResto/static/media/greenCheck.d8e0bb74.png",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.97ef8fba.js",
     "static/js/2.7014bad1.chunk.js",
-    "static/css/main.79564887.chunk.css",
-    "static/js/main.ae2cefdc.chunk.js"
+    "static/css/main.b38f7843.chunk.css",
+    "static/js/main.9aa5f6f2.chunk.js"
   ]
 }
