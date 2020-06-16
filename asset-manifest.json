@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/reactResto/static/css/main.941d58b6.chunk.css",
-    "main.js": "/reactResto/static/js/main.b1cb1afe.chunk.js",
-    "main.js.map": "/reactResto/static/js/main.b1cb1afe.chunk.js.map",
+    "main.css": "/reactResto/static/css/main.cb05759c.chunk.css",
+    "main.js": "/reactResto/static/js/main.ae2cefdc.chunk.js",
+    "main.js.map": "/reactResto/static/js/main.ae2cefdc.chunk.js.map",
     "runtime-main.js": "/reactResto/static/js/runtime-main.97ef8fba.js",
     "runtime-main.js.map": "/reactResto/static/js/runtime-main.97ef8fba.js.map",
-    "static/js/2.81b96aa5.chunk.js": "/reactResto/static/js/2.81b96aa5.chunk.js",
-    "static/js/2.81b96aa5.chunk.js.map": "/reactResto/static/js/2.81b96aa5.chunk.js.map",
+    "static/js/2.7014bad1.chunk.js": "/reactResto/static/js/2.7014bad1.chunk.js",
+    "static/js/2.7014bad1.chunk.js.map": "/reactResto/static/js/2.7014bad1.chunk.js.map",
     "index.html": "/reactResto/index.html",
-    "precache-manifest.2d042356368986691fcaa9c4bd34341f.js": "/reactResto/precache-manifest.2d042356368986691fcaa9c4bd34341f.js",
+    "precache-manifest.f87091e9ebb35b934e62c3bb9aae8819.js": "/reactResto/precache-manifest.f87091e9ebb35b934e62c3bb9aae8819.js",
     "service-worker.js": "/reactResto/service-worker.js",
-    "static/css/main.941d58b6.chunk.css.map": "/reactResto/static/css/main.941d58b6.chunk.css.map",
-    "static/js/2.81b96aa5.chunk.js.LICENSE.txt": "/reactResto/static/js/2.81b96aa5.chunk.js.LICENSE.txt",
+    "static/css/main.cb05759c.chunk.css.map": "/reactResto/static/css/main.cb05759c.chunk.css.map",
+    "static/js/2.7014bad1.chunk.js.LICENSE.txt": "/reactResto/static/js/2.7014bad1.chunk.js.LICENSE.txt",
     "static/media/landing-page-style.css": "/reactResto/static/media/steak1.026b52bf.jpg",
+    "static/media/greenCheck.png": "/reactResto/static/media/greenCheck.d8e0bb74.png",
     "static/media/prdc1.jpg": "/reactResto/static/media/prdc1.9b4bee42.jpg",
     "static/media/prdc2.jpg": "/reactResto/static/media/prdc2.4d5401b2.jpg",
     "static/media/prdc3.jpg": "/reactResto/static/media/prdc3.d6bf94fc.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.97ef8fba.js",
-    "static/js/2.81b96aa5.chunk.js",
-    "static/css/main.941d58b6.chunk.css",
-    "static/js/main.b1cb1afe.chunk.js"
+    "static/js/2.7014bad1.chunk.js",
+    "static/css/main.cb05759c.chunk.css",
+    "static/js/main.ae2cefdc.chunk.js"
   ]
 }
