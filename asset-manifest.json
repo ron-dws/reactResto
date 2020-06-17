@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/reactResto/static/css/main.35297abf.chunk.css",
+    "main.css": "/reactResto/static/css/main.b52d6c43.chunk.css",
     "main.js": "/reactResto/static/js/main.156144c5.chunk.js",
     "main.js.map": "/reactResto/static/js/main.156144c5.chunk.js.map",
     "runtime-main.js": "/reactResto/static/js/runtime-main.97ef8fba.js",
@@ -8,9 +8,9 @@
     "static/js/2.7014bad1.chunk.js": "/reactResto/static/js/2.7014bad1.chunk.js",
     "static/js/2.7014bad1.chunk.js.map": "/reactResto/static/js/2.7014bad1.chunk.js.map",
     "index.html": "/reactResto/index.html",
-    "precache-manifest.4b4284015772c60f432cc0a4b65c8de1.js": "/reactResto/precache-manifest.4b4284015772c60f432cc0a4b65c8de1.js",
+    "precache-manifest.dc52345e4ecb941a2220aa9a3c35bf73.js": "/reactResto/precache-manifest.dc52345e4ecb941a2220aa9a3c35bf73.js",
     "service-worker.js": "/reactResto/service-worker.js",
-    "static/css/main.35297abf.chunk.css.map": "/reactResto/static/css/main.35297abf.chunk.css.map",
+    "static/css/main.b52d6c43.chunk.css.map": "/reactResto/static/css/main.b52d6c43.chunk.css.map",
     "static/js/2.7014bad1.chunk.js.LICENSE.txt": "/reactResto/static/js/2.7014bad1.chunk.js.LICENSE.txt",
     "static/media/landing-page-style.css": "/reactResto/static/media/steak1.026b52bf.jpg",
     "static/media/greenCheck.png": "/reactResto/static/media/greenCheck.d8e0bb74.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.97ef8fba.js",
     "static/js/2.7014bad1.chunk.js",
-    "static/css/main.35297abf.chunk.css",
+    "static/css/main.b52d6c43.chunk.css",
     "static/js/main.156144c5.chunk.js"
   ]
 }
