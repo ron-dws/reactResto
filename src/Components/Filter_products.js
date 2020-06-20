@@ -7,6 +7,7 @@ class Filter_products extends Component{
 
         this.state = {
               prdc: "",
+              prdcsTotalCart: 0,
         }
     }
 
@@ -32,6 +33,7 @@ class Filter_products extends Component{
                          value = { this.name }
                       />
                   </li>
+                  <li> Total in cart:<span className="filter-total-in-cart"> ${ this.props.theTotal } </span></li>
               </ul>
             </>
         )

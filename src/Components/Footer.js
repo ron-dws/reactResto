@@ -23,9 +23,10 @@ export class Footer extends Component{
                 <div className="footer-col-2 ">
                     <h3>How We Started</h3>
                     <p>
-                       After getting a degree in computer programming, building 
-                       and managing the implementation of complex software such 
-                       as ERP System for different companies.
+                       1903 State Route 256 <br/>
+                       Reynoldsburg,  OH  43068 <br/>
+                       614/759-7764 <br/>
+                       https://www.myresto.com
                     </p>
                 </div>  
             </div>
