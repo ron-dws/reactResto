@@ -28,8 +28,20 @@ class Body_section_1 extends Component {
 
             setTimeout(()=>{
                 let x = document.getElementById("btn1-main");
+                    x.style.transform = "translate(0,0)";
                     x.style.opacity = 1;
             },3000);
+
+            setTimeout(()=>{
+               let x = document.getElementById("special-rect");
+               //let y = document.getElementById("special-rect-text");
+                   x.classList.add("rect-special");
+            },4000);
+
+            setTimeout(()=>{
+                let x = document.getElementById("special-rect-text");
+                    x.style.opacity = 1;
+            },5000)
         }
 
         //If Menu btn clicked -> display "welcome"
@@ -50,8 +62,8 @@ class Body_section_1 extends Component {
                     <br/>
                     <svg>
                         <g>
-                            <rect width="150" height="40" stroke="#aaa" strokeWidth="1" fill="none"></rect>
-                            <text x="75" y="20" alignmentBaseline="middle" fontSize="20" strokeWidth="0" fill="white" textAnchor="middle">HueLink</text>
+                            <rect width="150" height="40" stroke="#aaa" strokeWidth="1" fill="none" id="special-rect"></rect>
+                            <text x="75" y="20" alignmentBaseline="middle" fontSize="20" strokeWidth="0" fill="white" textAnchor="middle" id="special-rect-text">Special</text>
                         </g>
                     </svg>
                 </section>  

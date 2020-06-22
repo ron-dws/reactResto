@@ -1,26 +1,123 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
 import './../Css/landing-page-style.css';
+import { CartContext } from './CartContext';
+import { AllprdcsContext } from './AllprdcsContext';
+import { FilterContext } from './FilterContext';
+import { DisplayCartPrdcs } from './DisplayCartPrdcs';
+import axios from 'axios';
 
-class Filter_products extends Component{
-    constructor(props){
-        super(props);
+export const Filter_products = ( ) => {
+    const [cart, setCart] = useContext(CartContext);
+    const [allprdcs, setAllPrdcs] = useContext(AllprdcsContext);
+    const [filterData, setFilterData] = useContext(FilterContext);
+    const search_name = "product";
 
-        this.state = {
-              prdc: "",
-              prdcsTotalCart: 0,
-        }
+    const Prdc_to_search = (e) => { e.target.name = e.target.value; }
+
+    /*
+    Get all products from API & display
+    06/20/2020
+    */
+
+    //Use axios to get the products from end point (json file)
+    //const url_0 = "beers.json";
+    const url = "https://api.punkapi.com/v2/beers";
+
+    /*If I don't use useEffect axios will run continuously, 
+      the console.log was rendering response from the server
+      continuosly
+     */
+    React.useEffect(() => {
+        axios.get(url)
+        .then( response => {
+                console.log(response.data);
+                const prdcs_data = response.data;
+                setAllPrdcs(prdcs_data);
+                displayDefault(prdcs_data); //default -> Will display the first time the page load
+                }
+            )
+        .catch( error => console.log("error: "+error))
+      }, []);
+    
+      const displayDefault = (all) => {
+        if(!all.length) { return null; }
+        setFilterData(all)
+      }
+
+      const displaySomePrdcs = (allPrdcs)=>{
+        if(!allPrdcs.length) { return null; }
+
+        //Sort products by Date
+        let sortByDate = allPrdcs.sort((a,b) => { 
+            //return (a.first_brewed > b.first_brewed) ? 1 : ((b.first_brewed > a.first_brewed) ? -1 : 0);
+            let new_date_a = a.first_brewed;
+            let new_dd_arr_a = new_date_a.split("/");
+            let new_dd_reverse_a = new_dd_arr_a.reverse();
+            let new_dd_st_again_a = new_dd_reverse_a.join("-"); //date a in the format we want (good for sorting)
+
+            let new_date_b = b.first_brewed;
+            let new_dd_arr_b = new_date_b.split("/");
+            let new_dd_reverse_b = new_dd_arr_b.reverse();
+            let new_dd_st_again_b = new_dd_reverse_b.join("-"); //date b in the format we want (good for sorting)
+
+            //return new Date(new_dd_st_again_b) - new Date(new_dd_st_again_a);
+            return new Date(new_dd_st_again_a) - new Date(new_dd_st_again_b);
+            
+        });
+        console.log(sortByDate);
+        setFilterData(sortByDate);
+      } 
+
+      //Filter By Price
+      const displayByPrice = (allProducts) => {
+            if(!allProducts.length) { return null }
+
+            let sortByPrice = allProducts.sort((a,b) => { 
+                let price_a = a.ibu;
+                let price_b = b.ibu;
+                return price_a - price_b; 
+            });
+            console.log(sortByPrice);
+            setFilterData(sortByPrice);
+      }
+
+      //Apply the filter
+      const filterSelected = () => {
+          let optionSelected = document.getElementById("prdc-filter-display");
+          if(optionSelected.value === "By_date"){
+              //alert("by date");
+              displaySomePrdcs(allprdcs);
+          }else if(optionSelected.value === "By_Price"){
+              //alert("by price");
+              displayByPrice(allprdcs);
+          }else if(optionSelected === "By_default"){
+              //default
+              displayDefault(allprdcs);
+          }
+      }
+      
+    const cleanCart = (e) => {
+        e.preventDefault();
+        setCart([]);
+       // localStorage.removeItem("allprdcs");
+    }
+ 
+    const sendToCheckout = (e) =>{
+        e.preventDefault();
+        //alert("checkout");
+        window.location.href = "./shoppingcart";
+ 
     }
 
-    Prdc_to_seach = (e) => { this.setState({[e.target.name] : e.target.value}); }
-    render(){
         return(
             <>
               <h1>Our Products</h1>
               <ul className="ul-filter-prdc">
                   <li>
-                      <select id="prdc-filter-display" name="nm_prd_filter_display">
-                          <option value="By_Price">By Price</option> 
-                          <option value="By_date">By Date</option>   
+                      <select id="prdc-filter-display" name="nm_prd_filter_display" onChange = { filterSelected }>
+                          <option value="By_default"></option> 
+                          <option value="By_date">By Date</option> 
+                          <option value="By_Price">By Price</option>   
                       </select> 
                   </li>
                   <li>
@@ -28,16 +125,21 @@ class Filter_products extends Component{
                          type="text"
                          className = "input-prdc-search"
                          placeholder = "Search product"
-                         onChange={this.Prdc_to_seach}
+                         onChange={ Prdc_to_search }
                          name = "prdc"
-                         value = { this.name }
+                        //  value = { search_name }
                       />
                   </li>
-                  <li> Total in cart:<span className="filter-total-in-cart"> ${ this.props.theTotal } </span></li>
+                  <li> Total in cart:<span className="filter-total-in-cart">${ cart.total} </span></li>
               </ul>
+              <br />
+             <DisplayCartPrdcs />
+             <br/>
+             <button type="button" style={{padding:"6px", borderRadius:"5px", margin:"5px", border:"none",background:"dodgerblue", color:"white" }} onClick={e => sendToCheckout(e) }>Checkout</button>
+             <button type="button" style={{padding:"6px", borderRadius:"5px", margin:"5px", border:"none",background:"dodgerblue", color:"white" }} onClick={ e => cleanCart(e)}>clean cart</button>
+
             </>
         )
-    }
 }
 
 export default Filter_products;

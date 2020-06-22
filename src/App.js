@@ -1,46 +1,53 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Main_nav from './Components/Main_nav';
-import Body_section_1 from './Components/Body_section_1';
-import Body_section_2 from './Components/Body_section_2';
-import Body_section_3 from './Components/Body_section_3';
-import Form_registration from './Components/Form_registration';
-import { Footer } from './Components/Footer';
-import Products_display from './Components/Products_display';
-import Filter_products from './Components/Filter_products';
+import { Home } from "./Components/Home";
+import { ShoppingCart } from "./Components/ShoppingCart";
+import { CartProvider } from './Components/CartContext';
+import { AllprdcsProvider } from './Components/AllprdcsContext';
+import { FilterProvider } from './Components/FilterContext';
+import { ErrorPage } from './Components/ErrorPage';
 
 
-class App extends Component {
+const App = () => {
   
-   constructor(props){
-     super(props)
-     this.state = {
-       appTotal: 0,
-     }
-   }
+  //  constructor(props){
+  //    super(props)
+  //    this.state = {
+  //      appTotal: 0,
+  //    }
+  //  }
 
-   getTotal = (total, name)=>{
+  const getTotal = (total, name)=>{
      this.setState({
         appTotal: total,
        })
      console.log("from app: " + this.state.appTotal);
    }
 
-  render(){
-
     return (
       <div className="App"> 
-        <Body_section_1 />
-        <Body_section_2 />
-        <Body_section_3 />
-        <Form_registration />
-        <Filter_products theTotal = { this.state.appTotal } />
-        <Products_display parentCallback = { this.getTotal } />
-        <Footer />
+       <BrowserRouter>
+        <AllprdcsProvider>
+            <CartProvider>
+              <FilterProvider>
+
+                <Switch>
+                  <Route exact path="/" component = { Home } />
+                  <Route path = "/shoppingcart" component = { ShoppingCart } />
+                  <Route path = "*" component = { ErrorPage } />
+                </Switch>
+                
+              </FilterProvider>
+            </CartProvider> 
+          </AllprdcsProvider>
+       </BrowserRouter> 
+       
+        {/* <Filter_products theTotal = { this.state.appTotal } />
+        <Products_display parentCallback = { this.getTotal } /> */}
       </div>
     );
-
-  }
 }
 
 export default App;
+
