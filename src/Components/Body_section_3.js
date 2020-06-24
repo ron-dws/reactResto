@@ -22,6 +22,9 @@ class Body_section_3 extends Component {
                         
                     </div>
                 </section>
+                <div className="hr-register-form-container">
+                    <hr className="hr-register-form" />
+                </div>
            </div>
         )
     }

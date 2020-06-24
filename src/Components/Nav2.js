@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { HashLink } from 'react-router-hash-link';
 import '../Css/nav2.css';
 
 
@@ -46,16 +47,16 @@ class Nav2 extends Component{
     render(){ 
         return(
             <>
-            <div className="nav-2">
+            <div className="nav-2" id="top-nav-2">
                 <input type="checkbox" id="check"/>
                 <label htmlFor="check"><i onClick={ this.nav2Clicked } className="fa fa-bars"></i></label>
                 <label className="logo">Logo</label>
                 <ul className = "ulnav2">
-                    <li className="linav2"><a href="#" className="active">Home</a></li>
-                    <li className="linav2"><a href="#">Services</a></li>
-                    <li className="linav2"><a href="#">About Us</a></li>
-                    <li className="linav2"><a href="#reg-form">Register</a></li>
-                    <li className="linav2"><a href="#">Contact Us</a></li>
+                    <li className="linav2"><HashLink to="/#reg-form" className="a-nav2 active">Home</HashLink></li>
+                    <li className="linav2"><HashLink to="/#reg-form" className="a-nav2">Services</HashLink></li>
+                    <li className="linav2"><HashLink to="/#reg-form" className="a-nav2">About Us</HashLink></li>
+                    <li className="linav2"><HashLink to="/#reg-form" className="a-nav2">Register</HashLink></li>
+                    <li className="linav2"><HashLink to="/#reg-form" className="a-nav2">Contact Us</HashLink></li>
                 </ul>
             </div>
             

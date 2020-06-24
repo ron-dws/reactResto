@@ -6,8 +6,8 @@ import { FilterContext } from './FilterContext';
 import { ContextReset } from './ContextReset';
 import { TotalContext } from './TotalContext';
 
-const Products_displays = (props) =>  {
-    const [ cart, setCart ] = useContext(CartContext);
+const BodySection4 = ( ) => {
+  const [ cart, setCart ] = useContext(CartContext);
     const [ filterData, setFilterData ] = useContext(FilterContext);
     const [ myreset, setReset ] = useContext(ContextReset);
     const [ cartTotal, setCartTotal ] = useContext(TotalContext);
@@ -19,7 +19,7 @@ const Products_displays = (props) =>  {
     const displaySomePrdcs = (prdcs) => {
         let getPrdcsToDisplay = prdcs.slice(0,8).map((val, index) =>(
             <div key={index}>
-                <li className="li-each-product">
+                <li className="li-item">
                     <img className="img-prdcs" src={ val.image_url } alt="product" />
                     <p className="short-description">{ /*prdc_arr.shortDescription */ }</p>
                     <a href="https://i.picsum.photos/id/67/200/150.jpg" className="a-prdc-detail" >{val.first_brewed}</a>
@@ -76,14 +76,15 @@ const Products_displays = (props) =>  {
     }
 
     return(
-        <>
-          {/* <h1 className="h1-all-products">All Products</h1> */}
-          <ul className="ul-all-products" id="display-products-desktop">
-                <div className="displayPrdcs">{ displaySomePrdcs(filterData) }</div>  
-          </ul> 
-        </>
+     <>
+     <div id="display-produtcs-mobile" className="body-section-4" >
+        <h1 style={{ color: "rgba(54, 54, 59, 0.93)" }}> Special Drink</h1>
+        <ul className="hs full no-scrollbar">
+          { displaySomePrdcs(filterData) }
+        </ul>  
+      </div>
+     </>
     )
-    
 }
 
-export default Products_displays;
+export default BodySection4;

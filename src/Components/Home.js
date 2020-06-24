@@ -6,7 +6,8 @@ import Body_section_3 from './Body_section_3';
 import Form_registration from './Form_registration';
 import { Footer } from './Footer';
 import Products_display from './Products_display';
-import Filter_products from './Filter_products';
+import BodySection4 from './BodySection4';
+import Filter_products from './FilterProducts';
 
 
 
@@ -19,6 +20,7 @@ export const Home = () => {
          <Form_registration />
          <Filter_products />
          <Products_display /> 
+         <BodySection4 />
          <Footer />
         </>
     )

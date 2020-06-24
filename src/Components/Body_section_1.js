@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Main_nav from './Main_nav';
 import Nav2 from './Nav2';
 import './../Css/landing-page-style.css';
+import { HashLink } from 'react-router-hash-link';
 
 
 
@@ -13,13 +14,31 @@ class Body_section_1 extends Component {
         }
     }
 
+    
+      
    //Animate the main title and button when component load
    componentDidMount = () => { this.addh1class(); }
 
         addh1class = () => { 
+
+            //Back to top button display condition
+            const myScrollFunc = () => {
+                let y = window.pageYOffset;
+                const btn_back_top = document.getElementById("back-to-top");
+                if (y >= 800) {
+                  btn_back_top.style.display = "block";
+                } else {
+                  btn_back_top.style.display = "none";
+                }
+              };
+
+            //Check the position of the page to display or hide the back to top button
+           // window.addEventListener("scroll", myScrollFunc);
+
+            //Animate the text and buttons in the header
             let x = document.getElementById("st-main");
             setTimeout(()=>{
-                x.classList.add("h1-main-cl");
+                x.classList.add("h1-main-cl"); 
             },1000);
 
             setTimeout(()=>{
@@ -44,11 +63,7 @@ class Body_section_1 extends Component {
             },5000)
         }
 
-        //If Menu btn clicked -> display "welcome"
-        displayName = ()=> {
-            alert("Welcome");
-        }
-
+        
     render(){
         return(
             <>
@@ -56,9 +71,11 @@ class Body_section_1 extends Component {
                 <Nav2 />
                 <section id="st-main" className="section-1">
                     <h1 id="h1-main">Here To Serve You</h1>
-                    <button id="btn1-main" className="section-1-btn" onClick={ this.displayName }>
-                        Menu
-                    </button>
+                    <HashLink to="/#products-display">
+                        <button id="btn1-main" className="section-1-btn">
+                            Menu
+                        </button>
+                    </HashLink>
                     <br/>
                     <svg>
                         <g>
@@ -66,9 +83,13 @@ class Body_section_1 extends Component {
                             <text x="75" y="20" alignmentBaseline="middle" fontSize="20" strokeWidth="0" fill="white" textAnchor="middle" id="special-rect-text">Special</text>
                         </g>
                     </svg>
-                </section>  
+                </section> 
+                <HashLink to="/#top-nav-2">
+                  <button id="back-to-top" style={{ borderRadius:"100%", height:"50px", display:"none", cursor:"pointer", width:"50px", position:"fixed", background:"green", color:"white", border:"none", right:"5px", bottom:"5px" }}><i className="fa fa-hand-pointer-o"></i></button> 
+                </HashLink>
              </div>
              <hr className="hr-bar" />
+             
             </>
         )
     }

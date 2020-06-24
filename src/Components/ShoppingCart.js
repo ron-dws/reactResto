@@ -1,41 +1,36 @@
-import React, {useState, useContext} from "react";
-import { Link } from 'react-router-dom';
+import React, { useContext} from "react";
 import { CartContext } from "./CartContext";
-import { Filter_products } from "./Filter_products";
+import { TotalContext } from "./TotalContext";
+import { DisplayCartPrdcs } from "./DisplayCartPrdcs";
+import { HashLink } from "react-router-hash-link";
 
 
 export const ShoppingCart = () => {
    const [cart, setCart] = useContext(CartContext);
-   console.log(JSON.stringify(cart));
+   const [ cartTotal, setCartTotal ] = useContext(TotalContext);
+  
+   //console.log(JSON.stringify(cart));
 
-   const new_all_prdcs = JSON.parse(localStorage.getItem("allprdcs"));
+   //const new_all_prdcs = JSON.parse(localStorage.getItem("allprdcs"));
 
-   console.log(JSON.stringify(new_all_prdcs));
-   const checkoutPage = (cart) => {
-    if(!cart){
-        const emptyCart = <h4 style={{color:"red"}}>No Product in cart</h4>;
-        return  emptyCart;
-    }
-    const prdcsInCart =  cart.map((val, index )=>(
-                             <div key={ index }>
-                                <ul style={{listStyle:"none", display:"flex", width:"100%", justifyContent:"center" }}>
-                                    <li style={{padding:"8px"}}>{val.name}</li>
-                                    <li style={{padding:"8px"}}>{val.price}</li>
-                                </ul>
-                              </div>
-                         ))
-       return  prdcsInCart;
-   }
+   //console.log(JSON.stringify(new_all_prdcs));
+ 
     return(
         <>
-          <Filter_products />
-          {/* <div>{ checkoutPage(new_all_prdcs) }</div> */}
-          <Link to="/">
+          
+            <h1 style={{marginTop:"2rem"}}>Your Cart</h1>
+          <ul style={{display:"flex", justifyContent:"center", alignItems:"center", height:"4rem"}}>
+            <li style={{display:"flex", justifyContent:"center", alignItems:"center",}}> Total in cart:<span className="filter-total-in-cart">${ cartTotal.total } </span></li>
+          </ul>
+
+          <DisplayCartPrdcs />
+          <br/>
+          <HashLink to="/#products-display">
             <button type="button" style={{padding:"6px", borderRadius:"5px", margin:"5px", border:"none",background:"dodgerblue", color:"white" }}>
                 <i className="fa fa-long-arrow-left" style={{font:"10px", paddingRight:"5px"}}></i>
                 back to cart
             </button>
-          </Link>  
+          </HashLink> 
         </>
     )
 }

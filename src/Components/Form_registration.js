@@ -40,9 +40,6 @@ class Form_registration extends Component {
         const {firstName, lastName, email, phoneNumber } = this.state
         return(
             <div id="reg-form" className="register-form">
-                <div className="hr-register-form-container">
-                   <hr className="hr-register-form" />
-                </div>
                 <h1>Please Fill The Form</h1>
                 <form onSubmit={ this.Form_submited }>
                    <input className="input-form" type="text" name="firstName"   onChange={this.Value_has_changed} value={ firstName } placeholder="Your name"/><br/>

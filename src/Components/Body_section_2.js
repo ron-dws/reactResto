@@ -16,7 +16,6 @@ export class Body_section_2 extends Component{
                  <h1 className="h1-section-2">All Your Food</h1>
                </div>
                 <section className="section-2">
-                    
                     <div className="section-2-left">
                         
                     </div>

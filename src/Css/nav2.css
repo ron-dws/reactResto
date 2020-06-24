@@ -32,6 +32,7 @@
     background: rgba(36, 165, 75, 0.16);
     height: 80px;
     width: 100%;
+    overflow: hidden;
 }
 
 label.logo{
@@ -61,7 +62,7 @@ label.logo{
     padding: 7px 
 }
 
-a.active, a:hover{
+a.a-nav2.active, a.a-nav2:hover{
     background: rgba(11, 125, 189, 0.46);
     transition: .5s;
 }
@@ -129,7 +130,7 @@ a.active, a:hover{
         transition: .5s ease;
     }
 
-    li:hover{
+    li.linav2:hover{
         background: green;
         padding: 1rem 0;
         transition: .5s ease;

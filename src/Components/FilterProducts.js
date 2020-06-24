@@ -3,13 +3,17 @@ import './../Css/landing-page-style.css';
 import { CartContext } from './CartContext';
 import { AllprdcsContext } from './AllprdcsContext';
 import { FilterContext } from './FilterContext';
+import { ContextReset } from './ContextReset';
+import { TotalContext } from './TotalContext';
 import { DisplayCartPrdcs } from './DisplayCartPrdcs';
 import axios from 'axios';
 
 export const Filter_products = ( ) => {
     const [cart, setCart] = useContext(CartContext);
     const [allprdcs, setAllPrdcs] = useContext(AllprdcsContext);
+    const [ myreset, setReset ] = useContext(ContextReset);
     const [filterData, setFilterData] = useContext(FilterContext);
+    const [ cartTotal, setCartTotal ] = useContext(TotalContext);
     const search_name = "product";
 
     const Prdc_to_search = (e) => { e.target.name = e.target.value; }
@@ -39,11 +43,13 @@ export const Filter_products = ( ) => {
         .catch( error => console.log("error: "+error))
       }, []);
     
+      //Filter by ....
       const displayDefault = (all) => {
         if(!all.length) { return null; }
-        setFilterData(all)
+        setFilterData(all);
       }
 
+      //Filter by date
       const displaySomePrdcs = (allPrdcs)=>{
         if(!allPrdcs.length) { return null; }
 
@@ -66,6 +72,7 @@ export const Filter_products = ( ) => {
         });
         console.log(sortByDate);
         setFilterData(sortByDate);
+
       } 
 
       //Filter By Price
@@ -81,36 +88,41 @@ export const Filter_products = ( ) => {
             setFilterData(sortByPrice);
       }
 
-      //Apply the filter
+      //Apply the filters
       const filterSelected = () => {
           let optionSelected = document.getElementById("prdc-filter-display");
           if(optionSelected.value === "By_date"){
               //alert("by date");
               displaySomePrdcs(allprdcs);
+              setReset([]);
           }else if(optionSelected.value === "By_Price"){
               //alert("by price");
               displayByPrice(allprdcs);
+              setReset([]);
           }else if(optionSelected === "By_default"){
               //default
               displayDefault(allprdcs);
+              setReset([]);
           }
       }
       
     const cleanCart = (e) => {
         e.preventDefault();
         setCart([]);
+        setCartTotal([]);
        // localStorage.removeItem("allprdcs");
     }
  
     const sendToCheckout = (e) =>{
         e.preventDefault();
         //alert("checkout");
-        window.location.href = "./shoppingcart";
+        window.location.href = "./#/shoppingcart";
  
     }
 
         return(
             <>
+            <div  id="products-display">
               <h1>Our Products</h1>
               <ul className="ul-filter-prdc">
                   <li>
@@ -130,15 +142,15 @@ export const Filter_products = ( ) => {
                         //  value = { search_name }
                       />
                   </li>
-                  <li> Total in cart:<span className="filter-total-in-cart">${ cart.total} </span></li>
+                  <li> Total in cart:<span className="filter-total-in-cart">${ cartTotal.total } </span></li>
               </ul>
-              <br />
+              
              <DisplayCartPrdcs />
              <br/>
              <button type="button" style={{padding:"6px", borderRadius:"5px", margin:"5px", border:"none",background:"dodgerblue", color:"white" }} onClick={e => sendToCheckout(e) }>Checkout</button>
              <button type="button" style={{padding:"6px", borderRadius:"5px", margin:"5px", border:"none",background:"dodgerblue", color:"white" }} onClick={ e => cleanCart(e)}>clean cart</button>
-
-            </>
+           </div>
+         </>
         )
 }
 
