@@ -22,7 +22,8 @@ export const DisplayCartPrdcs = () => {
                 <li style={{padding:"5px 10px 5px 10px", minWidth:"200px"}}>{ val.name }</li>
                 <li style={{padding:"5px 10px 5px 10px", minWidth:"100px"}}>${ val.price }</li>
                 <li style={{padding:"5px 10px 5px 10px", minWidth:"100px"}}>QTY: { val.qty }</li>
-                <li style={{padding:"1px", marginTop:"3px", color:"white", width:"25px", height:"25px", borderRadius:"100%", cursor:"pointer", background:"dodgerblue"}} onClick={ e => addQty (e, index, val.name, val.price, val.qty ) }>+</li>
+                <li style={{padding:"0px", marginTop:"3px", color:"white", width:"25px", height:"25px", borderRadius:"100%", cursor:"pointer", background:"dodgerblue"}} onClick={ e => addQty (e, index, val.name, val.price, val.qty ) }>+</li>
+                <li style={{padding:"0px", marginTop:"3px", color:"white", width:"25px", height:"25px", borderRadius:"100%", cursor:"pointer", background:"dodgerblue", marginLeft:"5px"}} onClick={ e => substractQty (e, index, val.name, val.price, val.qty ) }>-</li>
                 <li style={{padding:"1px", marginTop:"3px", color:"white", width:"25px", height:"25px", borderRadius:"100%", cursor:"pointer", background:"red", marginLeft:"5px"}} onClick={ e => deletePrdc (e, index, val.price ) }>X</li>
               </ul>
             </div> 
@@ -51,6 +52,32 @@ export const DisplayCartPrdcs = () => {
      const addQty = (ev, prdcindex, name, price, qty) => {
 
       const new_qty = qty + 1;
+      const new_price = (price/qty) * new_qty; //(price/qty) return the unit price
+
+      //update the product price and qty values
+      cart[prdcindex].price = new_price;
+      cart[prdcindex].qty = new_qty;
+
+     
+      //Get the new total price inside the cart
+      const arr_of_all_prdcs_price = cart.map((a) => a.price); //get only products price in array
+      
+      const cart_total = arr_of_all_prdcs_price.reduce((total,val) => total + val);
+      setCartTotal({total: cart_total});
+
+      setReset([]);
+       
+    }
+
+     //substract quantity of a product
+     const substractQty = (ev, prdcindex, name, price, qty) => {
+
+      //Check if it is only 1 of this product in the cart
+      if(qty === 1){
+        alert("only 1 product in cart");
+        return;
+      }
+      const new_qty = qty - 1;
       const new_price = (price/qty) * new_qty; //(price/qty) return the unit price
 
       //update the product price and qty values
