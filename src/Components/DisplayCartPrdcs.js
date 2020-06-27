@@ -24,12 +24,22 @@ export const DisplayCartPrdcs = () => {
                 <li style={{padding:"5px 10px 5px 10px", minWidth:"100px"}}>QTY: { val.qty }</li>
                 <li style={{padding:"0px", marginTop:"3px", color:"white", width:"25px", height:"25px", borderRadius:"100%", cursor:"pointer", background:"dodgerblue"}} onClick={ e => addQty (e, index, val.name, val.price, val.qty ) }>+</li>
                 <li style={{padding:"0px", marginTop:"3px", color:"white", width:"25px", height:"25px", borderRadius:"100%", cursor:"pointer", background:"dodgerblue", marginLeft:"5px"}} onClick={ e => substractQty (e, index, val.name, val.price, val.qty ) }>-</li>
-                <li style={{padding:"1px", marginTop:"3px", color:"white", width:"25px", height:"25px", borderRadius:"100%", cursor:"pointer", background:"red", marginLeft:"5px"}} onClick={ e => deletePrdc (e, index, val.price ) }>X</li>
+                <li style={{padding:"1px", marginTop:"3px", color:"white", width:"25px", height:"25px", borderRadius:"100%", cursor:"pointer", background:"red", marginLeft:"5px"}} onClick={ e => deleteConfirm (e, index, val.price ) }>X</li>
               </ul>
             </div> 
         ));
         return prdcNameInCart;
     
+     }
+
+     const deleteConfirm = (e, prdcindex, price) => {
+        const confirmDeletion = window.confirm("Are you sure you want to delete the product ?");
+        if (confirmDeletion == true) {
+          deletePrdc(e, prdcindex, price);
+          return;
+        } else {
+          return;
+        }
      }
 
      const deletePrdc = (e, prdcindex, price) => {
