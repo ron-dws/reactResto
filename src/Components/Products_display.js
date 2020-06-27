@@ -36,8 +36,8 @@ const Products_displays = (props) =>  {
     const addPrdc = (cart, name, price) => {
         //e.preventDefault();
 
-        //Check if Cart already exist in cart
-        const prdc_in_cart = { name: name, price: price }
+        //set the product
+        const prdc_in_cart = { name: name, price: price, qty: 1 }
 
         //Check if the product already exist before adding to the cart
         if(!cart.length){

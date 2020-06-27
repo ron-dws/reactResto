@@ -535,8 +535,8 @@ button.add-to-cart:hover{
     #display-products-desktop{
         display:none;  /*Use to display or hide the products_display component*/
     }
-    
-    #display-products-mobile{
+
+    #display-produtcs-mobile{
         display: block;
     }
     .ul-all-products {
