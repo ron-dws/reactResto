@@ -18,19 +18,19 @@ export const DisplayCartPrdcs = () => {
             //track if that item is already inside the cart
             //loop through the cart and compare value
             <div key={index}>
-              <ul style={{listStyle:"none", display:"flex", margin:"5px", width:"100%", justifyContent:"center"}}>
-                <li style={{padding:"5px 10px 5px 10px", minWidth:"200px"}}>{ val.name }</li>
-                <li style={{padding:"5px 10px 5px 10px", minWidth:"100px"}}>${ val.price }</li>
-                <li style={{padding:"5px 10px 5px 10px", minWidth:"100px"}}>QTY: { val.qty }</li>
-                <li style={{padding:"0px", marginTop:"3px", color:"white", width:"25px", height:"25px", borderRadius:"100%", cursor:"pointer", background:"dodgerblue"}} onClick={ e => addQty (e, index, val.name, val.price, val.qty ) }>+</li>
-                <li style={{padding:"0px", marginTop:"3px", color:"white", width:"25px", height:"25px", borderRadius:"100%", cursor:"pointer", background:"dodgerblue", marginLeft:"5px"}} onClick={ e => substractQty (e, index, val.name, val.price, val.qty ) }>-</li>
-                <li style={{padding:"1px", marginTop:"3px", color:"white", width:"25px", height:"25px", borderRadius:"100%", cursor:"pointer", background:"red", marginLeft:"5px"}} onClick={ e => deleteConfirm (e, index, val.price ) }>X</li>
+              <ul className = "ul-display-cart-prdcs">
+                <li className = "li-display-cart-prdcs-name">{ val.name }</li>
+                <li className = "li-display-cart-prdcs">${ val.price }</li>
+                <li className = "li-display-cart-prdcs">QTY: { val.qty }</li>
+                <li className = "li-display-cart-prdcs-plus" onClick={ e => addQty (e, index, val.name, val.price, val.qty ) }>+</li>
+                <li className = "li-display-cart-prdcs-minus"  onClick={ e => substractQty (e, index, val.name, val.price, val.qty ) }>-</li>
+                <li className = "li-display-cart-prdcs-delete"  onClick={ e => deletePrdc (e, index, val.price ) }>X</li>
               </ul>
             </div> 
         ));
         return prdcNameInCart;
-    
      }
+
 
      const deleteConfirm = (e, prdcindex, price) => {
         const confirmDeletion = window.confirm("Are you sure you want to delete the product ?");

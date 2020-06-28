@@ -108,14 +108,20 @@ export const Filter_products = ( ) => {
       
     const cleanCart = (e) => {
         e.preventDefault();
-        setCart([]);
-        setCartTotal([]);
-       // localStorage.removeItem("allprdcs");
+        const confirmResponse = window.confirm("are you sure you want to clear your cart ?");
+        if(confirmResponse){
+            setCart([]);
+            setCartTotal([]);
+           // localStorage.removeItem("allprdcs");
+        }else{
+            return;
+        }
+        
     }
  
     const sendToCheckout = (e) =>{
+        
         e.preventDefault();
-        //alert("checkout");
         window.location.href = "./#/shoppingcart";
  
     }
