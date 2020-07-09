@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/reactResto/static/css/main.09bc1924.chunk.css",
-    "main.js": "/reactResto/static/js/main.c7350099.chunk.js",
-    "main.js.map": "/reactResto/static/js/main.c7350099.chunk.js.map",
+    "main.js": "/reactResto/static/js/main.eca8f4ca.chunk.js",
+    "main.js.map": "/reactResto/static/js/main.eca8f4ca.chunk.js.map",
     "runtime-main.js": "/reactResto/static/js/runtime-main.97ef8fba.js",
     "runtime-main.js.map": "/reactResto/static/js/runtime-main.97ef8fba.js.map",
     "static/js/2.927e38a5.chunk.js": "/reactResto/static/js/2.927e38a5.chunk.js",
     "static/js/2.927e38a5.chunk.js.map": "/reactResto/static/js/2.927e38a5.chunk.js.map",
     "index.html": "/reactResto/index.html",
-    "precache-manifest.e7fa3d5b1c22898ffdda4f5b1108c7ec.js": "/reactResto/precache-manifest.e7fa3d5b1c22898ffdda4f5b1108c7ec.js",
+    "precache-manifest.4ac3c0b908b85637a53ce65fc04dc6f4.js": "/reactResto/precache-manifest.4ac3c0b908b85637a53ce65fc04dc6f4.js",
     "service-worker.js": "/reactResto/service-worker.js",
     "static/css/main.09bc1924.chunk.css.map": "/reactResto/static/css/main.09bc1924.chunk.css.map",
     "static/js/2.927e38a5.chunk.js.LICENSE.txt": "/reactResto/static/js/2.927e38a5.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.97ef8fba.js",
     "static/js/2.927e38a5.chunk.js",
     "static/css/main.09bc1924.chunk.css",
-    "static/js/main.c7350099.chunk.js"
+    "static/js/main.eca8f4ca.chunk.js"
   ]
 }
