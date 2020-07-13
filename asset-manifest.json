@@ -1,24 +1,27 @@
 {
   "files": {
-    "main.css": "/reactResto/static/css/main.09bc1924.chunk.css",
-    "main.js": "/reactResto/static/js/main.0f791bd4.chunk.js",
-    "main.js.map": "/reactResto/static/js/main.0f791bd4.chunk.js.map",
+    "main.css": "/reactResto/static/css/main.1e60be27.chunk.css",
+    "main.js": "/reactResto/static/js/main.d52028ac.chunk.js",
+    "main.js.map": "/reactResto/static/js/main.d52028ac.chunk.js.map",
     "runtime-main.js": "/reactResto/static/js/runtime-main.97ef8fba.js",
     "runtime-main.js.map": "/reactResto/static/js/runtime-main.97ef8fba.js.map",
-    "static/js/2.199a3bbd.chunk.js": "/reactResto/static/js/2.199a3bbd.chunk.js",
-    "static/js/2.199a3bbd.chunk.js.map": "/reactResto/static/js/2.199a3bbd.chunk.js.map",
+    "static/css/2.14f3cd7d.chunk.css": "/reactResto/static/css/2.14f3cd7d.chunk.css",
+    "static/js/2.bb269002.chunk.js": "/reactResto/static/js/2.bb269002.chunk.js",
+    "static/js/2.bb269002.chunk.js.map": "/reactResto/static/js/2.bb269002.chunk.js.map",
     "index.html": "/reactResto/index.html",
-    "precache-manifest.ec46bc542efec78fffd99c112fcb85e6.js": "/reactResto/precache-manifest.ec46bc542efec78fffd99c112fcb85e6.js",
+    "precache-manifest.7a8eb6fc61590bd179d8d066a0ecf25d.js": "/reactResto/precache-manifest.7a8eb6fc61590bd179d8d066a0ecf25d.js",
     "service-worker.js": "/reactResto/service-worker.js",
-    "static/css/main.09bc1924.chunk.css.map": "/reactResto/static/css/main.09bc1924.chunk.css.map",
-    "static/js/2.199a3bbd.chunk.js.LICENSE.txt": "/reactResto/static/js/2.199a3bbd.chunk.js.LICENSE.txt",
+    "static/css/2.14f3cd7d.chunk.css.map": "/reactResto/static/css/2.14f3cd7d.chunk.css.map",
+    "static/css/main.1e60be27.chunk.css.map": "/reactResto/static/css/main.1e60be27.chunk.css.map",
+    "static/js/2.bb269002.chunk.js.LICENSE.txt": "/reactResto/static/js/2.bb269002.chunk.js.LICENSE.txt",
     "static/media/landing-page-style.css": "/reactResto/static/media/steak1.026b52bf.jpg",
     "static/media/greenCheck.png": "/reactResto/static/media/greenCheck.d8e0bb74.png"
   },
   "entrypoints": [
     "static/js/runtime-main.97ef8fba.js",
-    "static/js/2.199a3bbd.chunk.js",
-    "static/css/main.09bc1924.chunk.css",
-    "static/js/main.0f791bd4.chunk.js"
+    "static/css/2.14f3cd7d.chunk.css",
+    "static/js/2.bb269002.chunk.js",
+    "static/css/main.1e60be27.chunk.css",
+    "static/js/main.d52028ac.chunk.js"
   ]
 }
