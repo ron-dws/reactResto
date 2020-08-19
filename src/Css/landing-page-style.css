@@ -4,6 +4,10 @@
     box-sizing: border-box;
     overflow-x: hidden;
 }
+  
+.App {
+    text-align: center;
+}
 
 html{
     scroll-behavior: smooth;
@@ -70,18 +74,18 @@ a {
 }
 
 .section-1-btn{
-        border: 1px solid orange;
-        padding: 1rem;
-        width: 12rem;
-        /* position: absolute;
-        transform: translate(-50%,589%); */
-        transform: translate(0,-30px);
-        background: none;
-        color: white;
-        font-size: 18px;
-        cursor:pointer;
-        opacity: 0;
-        transition: .7s ease;
+    border: 1px solid orange;
+    padding: 1rem;
+    width: 12rem;
+    /* position: absolute;
+    transform: translate(-50%,589%); */
+    transform: translate(0,-30px);
+    background: none;
+    color: white;
+    font-size: 18px;
+    cursor:pointer;
+    opacity: 0;
+    transition: .7s ease;
 }
 
 .section-1-btn:hover{
@@ -177,10 +181,14 @@ a {
 }
 
 .register-form{
-    margin: 1rem 0;
+    margin: 1rem .5rem;
 }
 
-input[type="text"].input-form{
+.register-form h1{
+    font-size: 1.5rem;
+}
+
+input[type="text"].input-form, input[type="password"] {
     width: 16rem;
     height: 3rem;
     border-radius: 5px;
@@ -191,7 +199,21 @@ input[type="text"].input-form{
     box-shadow: 2px 4px grey;
 }
 
-button.form-btn{
+.input-form.cust-registration{
+    width: 100% !important;
+}
+
+select.input-form2, .input-form2{
+    width: 96%;
+    height: 3rem;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin-top: .5rem;
+    font-size: 1rem;
+}
+
+button.form-btn, .form-btn-cust-register{
     width: 13rem;
     padding: .5rem;
     margin-top: 1rem;
@@ -202,6 +224,29 @@ button.form-btn{
     font-size: 1rem;
     cursor: pointer;
     text-transform: uppercase;
+}
+
+.form-btn-cust-register{
+    width: 95% !important;
+    outline: none;
+}
+
+/* Login & Registration validation */
+.form-btn.btn-login{
+    background: dodgerblue;
+    border: 2px solid dodgerblue;
+    border-radius: 5px;
+    width: 16rem;
+}
+
+#validate_log_email, #validate_log_pass,
+#validate_reg_fn, #validate_reg_ln, #validate_reg_email, #validate_reg_phone {
+    color:red;
+    font-size: 12px;
+    padding-top: 5px;
+    opacity: 0;
+    display:none;
+    transition: 1.5s ease;
 }
 
 @keyframes moveTitle{
@@ -347,7 +392,7 @@ li.li-display-cart-prdcs-plus, .li-display-cart-prdcs-minus, .li-display-cart-pr
     border: 1px solid gray;
     padding: 10px;
     min-height: 350px;
-    width: 200px;
+    width: 205px;
     margin: 5px;
 }
 
@@ -361,6 +406,7 @@ li.li-display-cart-prdcs-plus, .li-display-cart-prdcs-minus, .li-display-cart-pr
 
 .a-prdc-detail{
   float:left;
+  margin-right: 5px;
   color: rgba(63, 0, 255, 0.95);
 }
 
@@ -382,7 +428,18 @@ button.add-to-cart:hover{
 }
 
 .prdc-price{
-  float:right;
+  float: right;
+  color: rgba(70, 67, 67, 0.95);
+}
+
+/* Update cart */
+.update-cart{
+    margin-top: 1rem;
+}
+
+.update-cart h1{
+    color: #5e5f5f;
+    font-weight: 600;
 }
 /* Body Section 4*/
 :root {
@@ -463,6 +520,25 @@ button.add-to-cart:hover{
     width: 10px;
   }
   
+    /*style scrollbar*/
+    ::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+        box-shadow: 0 0 6px rgba(0,0,0,0.3);
+        background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar
+    {
+        width: 3px;
+        background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar-thumb
+    {
+        background-color: rgba(0, 12, 255, 0.98);;
+    }
+
 
 /*----------------- On Mobile Devices ---------------*/
 @media (max-width: 850px){
@@ -575,9 +651,6 @@ button.add-to-cart:hover{
     }
 
     /* Cart Products Display on Mobile*/
-    ul.ul-display-cart-prdcs{
-        justify-content: inherit;
-    }
     li.li-display-cart-prdcs{
         min-width: 60px;
     }
@@ -587,13 +660,13 @@ button.add-to-cart:hover{
     }
 
     /*Products display*/
-    #display-products-desktop{
-        display: none;  /*Use to display or hide the products_display component*/
-    }
+    /* #display-products-desktop{
+        display: none;  Use to display or hide the products_display component
+    }*/
 
-    #display-produtcs-mobile{
+    /* #display-produtcs-mobile{
         display: block;
-    }
+    } */
 
     .img-prdcs{
         /* width:300px; */
@@ -613,6 +686,7 @@ button.add-to-cart:hover{
     .li-each-product{
         margin: .5rem;
         width: 130px;
+        min-height: 270px;
     }
 
     button.add-to-cart{
@@ -631,7 +705,14 @@ button.add-to-cart:hover{
         from{ transform: translateY(-200px); }
         to{ transform: translateY(0);}
     }
-     
+
+    /*style scrollbar*/
+    ::-webkit-scrollbar
+    {
+        width: 3px;
+        background-color: #F5F5F5;
+        display: none;
+    }
 }
 
 /*button animation work*/
@@ -684,4 +765,31 @@ svg rect{
 #special-rect-text{
     opacity: 0;
     transition: 1.5s;
+}
+
+
+
+/*-----------------------------*/
+select{
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark-color(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    cursor: default;
+    font: 400 13.3333px Arial;
+}
+
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
 }

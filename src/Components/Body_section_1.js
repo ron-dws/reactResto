@@ -33,7 +33,7 @@ class Body_section_1 extends Component {
               };
 
             //Check the position of the page to display or hide the back to top button
-           // window.addEventListener("scroll", myScrollFunc);
+            //window.addEventListener("scroll", myScrollFunc);
 
             //Animate the text and buttons in the header
             let x = document.getElementById("st-main");
@@ -85,7 +85,7 @@ class Body_section_1 extends Component {
                     </svg>
                 </section> 
                 <HashLink to="/#top-nav-2">
-                  <button id="back-to-top" style={{ borderRadius:"100%", height:"50px", display:"none", cursor:"pointer", width:"50px", position:"fixed", background:"green", color:"white", border:"none", right:"5px", bottom:"5px" }}><i className="fa fa-hand-pointer-o"></i></button> 
+                  <button id="back-to-top" style={{ borderRadius:"100%", height:"25px", width:"25px", display:"none", cursor:"pointer", position:"fixed", background:"green", color:"white", border:"none", right:"5px", bottom:"5px" }}><i className="fa fa-hand-pointer-o"></i></button> 
                 </HashLink>
              </div>
              <hr className="hr-bar" />

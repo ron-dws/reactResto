@@ -3,12 +3,24 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { Home } from "./Components/Home";
 import { ShoppingCart } from "./Components/ShoppingCart";
-import { CartProvider } from './Components/CartContext';
-import { AllprdcsProvider } from './Components/AllprdcsContext';
-import { FilterProvider } from './Components/FilterContext';
-import { ContextProvider } from './Components/ContextReset';
-import { TotalProvider } from './Components/TotalContext';
+import { ValidationAndPayment } from './Components/Checkout/ValidationAndPayment';
+import { UpdateCart } from './Components/UpdateCart';
+import { UpdateDeliveryInfo } from './Components/UpdateDeliveryInfo';
+import { CartProvider } from './Components/Contexts/CartContext';
+import { AllprdcsProvider } from './Components/Contexts/AllprdcsContext';
+import { FilterProvider } from './Components/Contexts/FilterContext';
+import { ContextProvider } from './Components/Contexts/ContextReset';
+import { TotalProvider } from './Components/Contexts/TotalContext';
 import { ErrorPage } from './Components/ErrorPage';
+
+import { CustomerProvider } from './Components/Contexts/CustomerContext';
+import { LoginProvider } from './Components/Contexts/LoginContext';
+
+import { ProductDetails } from './Components/ProductDetails';
+import { DeliveryProvider } from './Components/Contexts/DeliveryContext';
+import { DeliveryoptionsProvider } from './Components/Contexts/DeliveryoptionsContext';
+
+
 
 
 const App = () => {
@@ -35,24 +47,33 @@ const App = () => {
               <FilterProvider>
                 <ContextProvider>
                   <TotalProvider>
+                    <CustomerProvider>
+                      <LoginProvider>
+                        <DeliveryoptionsProvider>
+                          <DeliveryProvider>
+                       
+                            <Switch>
+                              <Route exact path="/" component = { Home } />
+                              <Route path= "/updatecart" component = { UpdateCart } />
+                              <Route path= "/updatedelivery" component= { UpdateDeliveryInfo } />
+                              <Route path = "/shoppingcart" component = { ShoppingCart } />
+                              <Route path = "/productdetail/:value" component = { ProductDetails } />
+                              <Route path = "/payment" component = { ValidationAndPayment } />
+                              <Route path = "*" component = { ErrorPage } />
+                            </Switch>
 
-                    <Switch>
-                      <Route exact path="/" component = { Home } />
-                      <Route path = "/shoppingcart" component = { ShoppingCart } />
-                      <Route path = "*" component = { ErrorPage } />
-                    </Switch>
-
+                          </DeliveryProvider>
+                        </DeliveryoptionsProvider>
+                     </LoginProvider>
+                    </CustomerProvider>
                   </TotalProvider>
                 </ContextProvider> 
               </FilterProvider>
             </CartProvider> 
           </AllprdcsProvider>
-       </HashRouter> 
-       
-        {/* <Filter_products theTotal = { this.state.appTotal } />
-        <Products_display parentCallback = { this.getTotal } /> */}
+       </HashRouter>
       </div>
-    );
+    )
 }
 
 export default App;

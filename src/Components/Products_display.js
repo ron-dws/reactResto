@@ -1,41 +1,95 @@
 import React, { useContext } from 'react';
 import './../Css/landing-page-style.css';
-import { CartContext } from './CartContext';
-import { AllprdcsContext } from './AllprdcsContext';
-import { FilterContext } from './FilterContext';
-import { ContextReset } from './ContextReset';
-import { TotalContext } from './TotalContext';
+import './../Css/add-cartnote-modal.css';
+import { CartContext } from './Contexts/CartContext';
+import { AllprdcsContext } from './Contexts/AllprdcsContext';
+import { FilterContext } from './Contexts/FilterContext';
+import { ContextReset } from './Contexts/ContextReset';
+import { TotalContext } from './Contexts/TotalContext';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
-const Products_displays = (props) =>  {
+const Products_displays = () =>  {
     const [ cart, setCart ] = useContext(CartContext);
     const [ filterData, setFilterData ] = useContext(FilterContext);
     const [ myreset, setReset ] = useContext(ContextReset);
     const [ cartTotal, setCartTotal ] = useContext(TotalContext);
 
-    // React.useEffect(() => {
-    //     setCart([{total: 0},{name:"", price:""}]);
-    //   }, []);
 
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    
     const displaySomePrdcs = (prdcs) => {
         let getPrdcsToDisplay = prdcs.slice(0,8).map((val, index) =>(
             <div key={index}>
-                <li className="li-each-product">
-                    <img className="img-prdcs" src={ val.image_url } alt="product" />
-                    <p className="short-description">{ /*prdc_arr.shortDescription */ }</p>
-                    <a href="https://i.picsum.photos/id/67/200/150.jpg" className="a-prdc-detail" >{val.first_brewed}</a>
-                    <p className="prdc-price">${ val.ibu }</p>
-                    <button type="button" className="add-to-cart" onClick={() => addPrdc(cart, val.name, val.ibu)}>add to cart</button> 
-                </li>
+                
+                    <li className="li-each-product">
+                       <Link to= { "/productdetail/"+val.id } >
+                        <img className="img-prdcs" src={ val.image_url } alt="product" />
+                        <p className="short-description">{ /*prdc_arr.shortDescription */ }</p>
+                        <p className="a-prdc-detail" >{val.first_brewed}</p>
+                        <p className="prdc-price">${ val.ibu }</p>
+                        </Link>
+                        {/* <button type="button" className="add-to-cart" onClick={() => addNote(cart, val.name, val.ibu)}>add to cart</button> */}
+                        <button type="button" className="add-to-cart" onClick={() => addPrdc(cart, val.name, val.ibu)}>add to cart</button> 
+                    </li>
+                
             </div>
         ));
         
         return getPrdcsToDisplay;
     }
 
-    
+    //Popup suggestion to add a note to the product 
+    const addNote = (cart, name, price) => {
+       
+       // When the user clicks the button, open the modal 
+       modal.style.display = "block";
+       
+       
+       // When the user clicks on <span> (x), close the modal
+       span.onclick = function() {
+         modal.style.display = "none";
+       }
+       
+       // When the user clicks anywhere outside of the modal, close it
+       window.onclick = function(event) {
+         if (event.target == modal) {
+           modal.style.display = "none";
+         }
+       }
+
+    }
+
+    //Check if a note has been added and add the product to the cart
+    const addit = () => {
+        //e.preventDefault();
+        let note_added = document.getElementById("id-cart-note").value;
+        alert(note_added);
+
+        //Add the note and the product to the cart
+
+        //clean the textarea & hide the modal
+        note_added = ""; 
+        modal.style.display = "none";
+      }
+
+    //Cancel adding note
+    const cancel_add_note = () => {
+        modal.style.display = "none";
+    }
+
+    //Add the product to the cart
     const addPrdc = (cart, name, price) => {
         //e.preventDefault();
+         
+        //modal.style.display = "block";  /*Display the modal to allow the user to enter a note*/ 
 
+        //const getAddResult = 
         //set the product
         const prdc_in_cart = { name: name, price: price, qty: 1 }
 
@@ -81,6 +135,17 @@ const Products_displays = (props) =>  {
           <ul className="ul-all-products" id="display-products-desktop">
                 <div className="displayPrdcs">{ displaySomePrdcs(filterData) }</div>  
           </ul> 
+
+        {/* <!-- Modal--> */}
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onClick= { cancel_add_note } >&times;</span>
+                <label>Add a note</label><br/>
+                <textarea cols="30" rows="6" placeholder="add a note" id="id-cart-note"></textarea><br/>
+                <button type="button" onClick = { addit }>Add</button>
+                <button type="button" onClick = { cancel_add_note } style={{margin: "5px"}}>Cancel</button>
+            </div>
+        </div>
         </>
     )
     

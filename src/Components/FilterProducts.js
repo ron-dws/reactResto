@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './../Css/landing-page-style.css';
-import { CartContext } from './CartContext';
-import { AllprdcsContext } from './AllprdcsContext';
-import { FilterContext } from './FilterContext';
-import { ContextReset } from './ContextReset';
-import { TotalContext } from './TotalContext';
+import { CartContext } from './Contexts/CartContext';
+import { AllprdcsContext } from './Contexts/AllprdcsContext';
+import { FilterContext } from './Contexts/FilterContext';
+import { ContextReset } from './Contexts/ContextReset';
+import { TotalContext } from './Contexts/TotalContext';
 import { DisplayCartPrdcs } from './DisplayCartPrdcs';
 import axios from 'axios';
 
@@ -27,7 +27,7 @@ export const Filter_products = ( ) => {
     //const url_0 = "beers.json";
     const url = "https://api.punkapi.com/v2/beers";
 
-    /*If I don't use useEffect axios will run continuously, 
+    /*If I don't add [] with use useEffect, axios will run continuously, 
       the console.log was rendering response from the server
       continuosly
      */
@@ -40,13 +40,27 @@ export const Filter_products = ( ) => {
                 displayDefault(prdcs_data); //default -> Will display the first time the page load
                 }
             )
-        .catch( error => console.log("error: "+error))
+        .catch( error => console.log("error: "+error));
+        
       }, []);
+
+      useEffect(() => {
+        //Hide or display checkout & clear cart btn
+        checkoutDisplay();
+      })
     
       //Filter by ....
       const displayDefault = (all) => {
+          
         if(!all.length) { return null; }
-        setFilterData(all);
+
+        let sortById = all.sort((a,b)=>{
+            let prdcid_a = a.id;
+            let prdcid_b = b.id;
+            return prdcid_a - prdcid_b;
+        })
+        setFilterData(sortById);
+
       }
 
       //Filter by date
@@ -99,12 +113,21 @@ export const Filter_products = ( ) => {
               //alert("by price");
               displayByPrice(allprdcs);
               setReset([]);
-          }else if(optionSelected === "By_default"){
+          }else if(optionSelected.value === "By_default"){
               //default
               displayDefault(allprdcs);
               setReset([]);
           }
       }
+
+    const checkoutDisplay = () => {
+        const get_checkout_show = document.querySelector("#checkout-show");
+        if(!cart.length){
+            get_checkout_show.style.display = 'none';
+        }else{
+            get_checkout_show.style.display = 'block';
+        }
+    }
       
     const cleanCart = (e) => {
         e.preventDefault();
@@ -133,7 +156,7 @@ export const Filter_products = ( ) => {
               <ul className="ul-filter-prdc">
                   <li>
                       <select id="prdc-filter-display" name="nm_prd_filter_display" onChange = { filterSelected }>
-                          <option value="By_default"></option> 
+                          <option value="By_default">By products</option> 
                           <option value="By_date">By Date</option> 
                           <option value="By_Price">By Price</option>   
                       </select> 
@@ -153,8 +176,10 @@ export const Filter_products = ( ) => {
               
              <DisplayCartPrdcs />
              <br/>
-             <button type="button" style={{padding:"6px", borderRadius:"5px", margin:"5px", border:"none",background:"dodgerblue", color:"white" }} onClick={e => sendToCheckout(e) }>Checkout</button>
-             <button type="button" style={{padding:"6px", borderRadius:"5px", margin:"5px", border:"none",background:"dodgerblue", color:"white" }} onClick={ e => cleanCart(e)}>clean cart</button>
+             <div id="checkout-show">
+                <button type="button" style={{padding:"6px", borderRadius:"5px", margin:"5px", border:"none",background:"dodgerblue", color:"white" }} onClick={e => sendToCheckout(e) }>Checkout</button>
+                <button type="button" style={{padding:"6px", borderRadius:"5px", margin:"5px", border:"none",background:"dodgerblue", color:"white" }} onClick={ e => cleanCart(e) }>clean cart</button>
+             </div>
            </div>
          </>
         )

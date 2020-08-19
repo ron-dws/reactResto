@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import './../Css/landing-page-style.css';
-import { CartContext } from './CartContext';
-import { AllprdcsContext } from './AllprdcsContext';
-import { FilterContext } from './FilterContext';
-import { ContextReset } from './ContextReset';
-import { TotalContext } from './TotalContext';
+import { CartContext } from './Contexts/CartContext';
+import { AllprdcsContext } from './Contexts/AllprdcsContext';
+import { FilterContext } from './Contexts/FilterContext';
+import { ContextReset } from './Contexts/ContextReset';
+import { TotalContext } from './Contexts/TotalContext';
 
 const BodySection4 = ( ) => {
   const [ cart, setCart ] = useContext(CartContext);
@@ -20,10 +21,12 @@ const BodySection4 = ( ) => {
         let getPrdcsToDisplay = prdcs.slice(0,8).map((val, index) =>(
             <div key={index}>
                 <li className="li-item">
-                    <img className="img-prdcs" src={ val.image_url } alt="product" />
-                    <p className="short-description">{ /*prdc_arr.shortDescription */ }</p>
-                    <a href="https://i.picsum.photos/id/67/200/150.jpg" className="a-prdc-detail" >{val.first_brewed}</a>
-                    <p className="prdc-price">${ val.ibu }</p>
+                    <Link to= { "/productdetail/"+val.id } style={{width:"100%"}} >
+                        <img className="img-prdcs" src={ val.image_url } alt="product" />
+                        <p className="short-description">{ /*prdc_arr.shortDescription */ }</p>
+                        <div className="a-prdc-detail" >{val.first_brewed}</div>
+                        <p className="prdc-price">${ val.ibu }</p>
+                    </Link>
                     <button type="button" className="add-to-cart" onClick={() => addPrdc(cart, val.name, val.ibu)}>add to cart</button> 
                 </li>
             </div>

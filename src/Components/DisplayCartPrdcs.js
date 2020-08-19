@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import { CartContext } from './CartContext';
-import { ContextReset } from './ContextReset';
-import { TotalContext } from './TotalContext';
+import { CartContext } from './Contexts/CartContext';
+import { ContextReset } from './Contexts/ContextReset';
+import { TotalContext } from './Contexts/TotalContext';
+import '../Css/landing-page-style.css';
 
 export const DisplayCartPrdcs = () => {
     const [ cart, setCart ] = useContext(CartContext);
@@ -107,7 +108,7 @@ export const DisplayCartPrdcs = () => {
 
     return(
     <>
-       <span >Items: { disPrdName(cart) } </span>
+       <span >Products: { disPrdName(cart) } </span>
     </>
     )
 }
