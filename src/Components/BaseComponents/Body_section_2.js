@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './../Css/landing-page-style.css';
+import './../../Css/landing-page-style.css';
 import Section_2_right from './Section_2_right';
 
 export class Body_section_2 extends Component{

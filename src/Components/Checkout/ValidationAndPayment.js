@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { PaymentRegistration } from './PaymentRegistration';
-import { BusinessInfo } from '../BusinessInfo';
+import { BusinessInfo } from '../BaseComponents/BusinessInfo';
 import { HashLink } from 'react-router-hash-link';
 import { DeliveryContext } from '../Contexts/DeliveryContext';
 import '../../Css/validation.css'

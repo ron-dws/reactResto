@@ -8,7 +8,7 @@ import { Footer } from './Footer';
 import Products_display from './Products_display';
 import BodySection4 from './BodySection4';
 import Filter_products from './FilterProducts';
-import CustomerRegistration from './Customers/CustomerRegistration';
+import CustomerRegistration from './../Customers/CustomerRegistration';
 
 
 
@@ -18,7 +18,7 @@ export const Home = () => {
          <Body_section_1 />
          <Body_section_2 />
          <Body_section_3 />
-         <Form_registration /> {/*Can be use to Subscribe (inputs(email))*/}
+         {/* <Form_registration /> */} { /*Can be use to Subscribe (inputs(email))*/ } 
          <Filter_products />
          <Products_display /> 
          <BodySection4 />

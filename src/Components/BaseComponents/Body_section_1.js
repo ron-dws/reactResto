@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Main_nav from './Main_nav';
 import Nav2 from './Nav2';
-import './../Css/landing-page-style.css';
+import './../../Css/landing-page-style.css';
 import { HashLink } from 'react-router-hash-link';
 
 

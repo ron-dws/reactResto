@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import '../Css/product-detail.css';
+import '../../Css/product-detail.css';
 import axios from 'axios';
 import { HashLink } from 'react-router-hash-link';
-import { ContextReset } from './Contexts/ContextReset';
-import { TotalContext } from './Contexts/TotalContext';
-import { CartContext } from './Contexts/CartContext';
+import { ContextReset } from './../Contexts/ContextReset';
+import { TotalContext } from './../Contexts/TotalContext';
+import { CartContext } from './../Contexts/CartContext';
 
 
 

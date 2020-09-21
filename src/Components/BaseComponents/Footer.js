@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './../Css/landing-page-style.css';
+import './../../Css/landing-page-style.css';
 
 export class Footer extends Component{
     constructor(props){

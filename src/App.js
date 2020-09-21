@@ -1,22 +1,22 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import { Home } from "./Components/Home";
-import { ShoppingCart } from "./Components/ShoppingCart";
+import { Home } from "./Components/BaseComponents/Home";
+import { ShoppingCart } from "./Components/BaseComponents/ShoppingCart";
 import { ValidationAndPayment } from './Components/Checkout/ValidationAndPayment';
-import { UpdateCart } from './Components/UpdateCart';
-import { UpdateDeliveryInfo } from './Components/UpdateDeliveryInfo';
+import { UpdateCart } from './Components/BaseComponents/UpdateCart';
+import { UpdateDeliveryInfo } from './Components/BaseComponents/UpdateDeliveryInfo';
 import { CartProvider } from './Components/Contexts/CartContext';
 import { AllprdcsProvider } from './Components/Contexts/AllprdcsContext';
 import { FilterProvider } from './Components/Contexts/FilterContext';
 import { ContextProvider } from './Components/Contexts/ContextReset';
 import { TotalProvider } from './Components/Contexts/TotalContext';
-import { ErrorPage } from './Components/ErrorPage';
+import { ErrorPage } from './Components/BaseComponents/ErrorPage';
 
 import { CustomerProvider } from './Components/Contexts/CustomerContext';
 import { LoginProvider } from './Components/Contexts/LoginContext';
 
-import { ProductDetails } from './Components/ProductDetails';
+import { ProductDetails } from './Components/BaseComponents/ProductDetails';
 import { DeliveryProvider } from './Components/Contexts/DeliveryContext';
 import { DeliveryoptionsProvider } from './Components/Contexts/DeliveryoptionsContext';
 

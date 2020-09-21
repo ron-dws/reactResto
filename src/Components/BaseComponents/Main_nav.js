@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './../Css/landing-page-style.css';
+import './../../Css/landing-page-style.css';
 
 
 class Main_nav extends Component {

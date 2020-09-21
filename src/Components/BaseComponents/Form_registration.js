@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './../Css/landing-page-style.css';
+import './../../Css/landing-page-style.css';
 import axios from 'axios';
 
 class Form_registration extends Component {

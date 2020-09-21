@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import './../Css/landing-page-style.css';
-import './../Css/add-cartnote-modal.css';
-import { CartContext } from './Contexts/CartContext';
-import { AllprdcsContext } from './Contexts/AllprdcsContext';
-import { FilterContext } from './Contexts/FilterContext';
-import { ContextReset } from './Contexts/ContextReset';
-import { TotalContext } from './Contexts/TotalContext';
+import './../../Css/landing-page-style.css';
+import './../../Css/add-cartnote-modal.css';
+import { CartContext } from './../Contexts/CartContext';
+import { AllprdcsContext } from './../Contexts/AllprdcsContext';
+import { FilterContext } from './../Contexts/FilterContext';
+import { ContextReset } from './../Contexts/ContextReset';
+import { TotalContext } from './../Contexts/TotalContext';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 

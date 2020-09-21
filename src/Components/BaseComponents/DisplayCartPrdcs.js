@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { CartContext } from './Contexts/CartContext';
-import { ContextReset } from './Contexts/ContextReset';
-import { TotalContext } from './Contexts/TotalContext';
-import '../Css/landing-page-style.css';
+import { CartContext } from './../Contexts/CartContext';
+import { ContextReset } from './../Contexts/ContextReset';
+import { TotalContext } from './../Contexts/TotalContext';
+import '../../Css/landing-page-style.css';
 
 export const DisplayCartPrdcs = () => {
     const [ cart, setCart ] = useContext(CartContext);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Section_2_right from './Section_2_right';
-import './../Css/landing-page-style.css';
+import './../../Css/landing-page-style.css';
 
 class Body_section_3 extends Component {
     constructor(props){

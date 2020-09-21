@@ -1,9 +1,9 @@
 import React, { useEffect, useContext } from 'react';
 import { HashLink } from 'react-router-hash-link';
-import '../Css/nav2.css';
-import { LoginContext } from './Contexts/LoginContext';
-import { CustomerContext } from './Contexts/CustomerContext';
-import { DeliveryContext } from './Contexts/DeliveryContext';
+import '../../Css/nav2.css';
+import { LoginContext } from './../Contexts/LoginContext';
+import { CustomerContext } from './../Contexts/CustomerContext';
+import { DeliveryContext } from './../Contexts/DeliveryContext';
 
 
 const Nav2 = () => {
@@ -118,7 +118,7 @@ const Nav2 = () => {
             
             <div className="contain">
                 <div className="frame">
-                    <img className="im" src={require('../Img/greenCheck.png')} alt="check mark" />
+                    <img className="im" src={require('../../Img/greenCheck.png')} alt="check mark" />
                     <p style={{ color: "white" }}> I love everything she said, but I wasn't sure if that was the right thing to do</p>
                 </div>
             </div>

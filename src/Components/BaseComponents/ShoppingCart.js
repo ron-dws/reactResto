@@ -3,19 +3,19 @@ import { DisplayCartPrdcs } from "./DisplayCartPrdcs";
 import { Login } from "./Login";
 import { HashLink } from "react-router-hash-link";
 import { useHistory } from 'react-router-dom';
-import   CustomerRegistration from "./Customers/CustomerRegistration";
-import { DeliveryMethod } from "./Checkout/DeliveryMethod";
-import { DeliveryInfo } from './Checkout/DeliveryInfo';
-import { PickupInfo } from './Checkout/PickupInfo';
+import   CustomerRegistration from "./../Customers/CustomerRegistration";
+import { DeliveryMethod } from "./../Checkout/DeliveryMethod";
+import { DeliveryInfo } from './../Checkout/DeliveryInfo';
+import { PickupInfo } from './../Checkout/PickupInfo';
 
-import { LoginContext } from "./Contexts/LoginContext";
-import { ContextReset } from "./Contexts/ContextReset";
-import { DeliveryoptionsContext } from "./Contexts/DeliveryoptionsContext";
-import { CartContext } from "./Contexts/CartContext";
-import { TotalContext } from "./Contexts/TotalContext";
-import "../Css/shopping-cart.css";
-import { DeliveryContext } from "./Contexts/DeliveryContext";
-import { CustomerContext } from "./Contexts/CustomerContext";
+import { LoginContext } from "./../Contexts/LoginContext";
+import { ContextReset } from "./../Contexts/ContextReset";
+import { DeliveryoptionsContext } from "./../Contexts/DeliveryoptionsContext";
+import { CartContext } from "./../Contexts/CartContext";
+import { TotalContext } from "./../Contexts/TotalContext";
+import "../../Css/shopping-cart.css";
+import { DeliveryContext } from "./../Contexts/DeliveryContext";
+import { CustomerContext } from "./../Contexts/CustomerContext";
 
 
 export const ShoppingCart = () => {
@@ -46,7 +46,6 @@ export const ShoppingCart = () => {
          //window.location.href = "/reactResto";
          const backHome = document.getElementById("btn-continue-shopping");
          backHome.click();
-
       }else{
         return;
       }

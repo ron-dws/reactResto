@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import axios from 'axios';
-import '../Css/landing-page-style.css';
-import { LoginContext } from './Contexts/LoginContext';
-import { CustomerContext } from './Contexts/CustomerContext';
-import { DeliveryContext } from './Contexts/DeliveryContext';
+import '../../Css/landing-page-style.css';
+import { LoginContext } from './../Contexts/LoginContext';
+import { CustomerContext } from './../Contexts/CustomerContext';
+import { DeliveryContext } from './../Contexts/DeliveryContext';
 
 
 export const Login = () => {
