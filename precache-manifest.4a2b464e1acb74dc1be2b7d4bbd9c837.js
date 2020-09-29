@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cdd9c32fdc026349dcc863f0c324d9e2",
+    "revision": "1355f6556acf7ad390346757bf3e8453",
     "url": "/reactResto/index.html"
   },
   {
-    "revision": "46f98fc9882d40729d24",
+    "revision": "92984d52b4ff336aa682",
     "url": "/reactResto/static/css/2.14f3cd7d.chunk.css"
   },
   {
-    "revision": "43e6cc116cc66bc0d34b",
-    "url": "/reactResto/static/css/main.160b984c.chunk.css"
+    "revision": "ccdde1c772b01fae901f",
+    "url": "/reactResto/static/css/main.637b71b5.chunk.css"
   },
   {
-    "revision": "46f98fc9882d40729d24",
-    "url": "/reactResto/static/js/2.5b9df151.chunk.js"
+    "revision": "92984d52b4ff336aa682",
+    "url": "/reactResto/static/js/2.00a80159.chunk.js"
   },
   {
     "revision": "f0d0855484a7a377ebb232589c642562",
-    "url": "/reactResto/static/js/2.5b9df151.chunk.js.LICENSE.txt"
+    "url": "/reactResto/static/js/2.00a80159.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "43e6cc116cc66bc0d34b",
-    "url": "/reactResto/static/js/main.64b4a4cd.chunk.js"
+    "revision": "ccdde1c772b01fae901f",
+    "url": "/reactResto/static/js/main.04038962.chunk.js"
   },
   {
     "revision": "0ad547421a6ca374816e",
@@ -30,6 +30,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6907da6abd9cc67492f35634ebe829e6",
     "url": "/reactResto/static/media/burger1.6907da6a.jpg"
+  },
+  {
+    "revision": "d2127efb49fd3246dafe24dcdc0c9c9c",
+    "url": "/reactResto/static/media/cropped-logo.d2127efb.png"
   },
   {
     "revision": "d8e0bb7487fe72ee4c432ed24f4ebc45",
