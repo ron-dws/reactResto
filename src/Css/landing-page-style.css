@@ -13,6 +13,12 @@ html{
     scroll-behavior: smooth;
 }
 
+.img-logo{
+    width: 75px;
+    float: left;
+    margin: 15px;
+}
+
 .img-prdcs{
     /* width:300px; */
     height:250px;
@@ -411,7 +417,7 @@ li.li-display-cart-prdcs-plus, .li-display-cart-prdcs-minus, .li-display-cart-pr
 }
 
 button.add-to-cart{
-    margin-top: 30px;
+    margin: 20px auto;
     color: white;
     background: rgba(2, 2, 255, 0.81);
     border: none;

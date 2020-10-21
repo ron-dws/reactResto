@@ -21,7 +21,9 @@ class Main_nav extends Component {
              <div>
                 <div className="nav-mobile" onClick={this.showNav}><i className="fa fa-bars"></i></div>
                 <div className="nav-bar-main">
-                    <h5 style={{ paddingLeft: "3rem", color: "white" }}>Logo</h5>
+                    <h5 style={{ paddingLeft: "3rem", color: "white" }}>
+                        <img className="im" src={require('../../Img/greenCheck.png')} alt="check mark" />
+                    </h5>
                     <ul className="ul-nav-bar-main" id="ulid-nav-bar-main">
                         <a href="https://www.google.com"><li className="li-nav-bar-main"> Home</li></a>
                         <a href="https://www.google.com"><li className="li-nav-bar-main"> Services</li></a>

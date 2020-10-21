@@ -28,7 +28,15 @@ export const ProductDetails = (props) => {
 
     },[]);
 
+    
     const displayDetail = (mycart, prodc) => {
+
+       const handleChangeTextarea = () => {
+         alert("lui");
+       }
+
+       let testcheck = ""
+
         if(!prodc.length) { return null;}
         let getPrdcDetail = prodc.map((val,index)=>(
           <div key={index}>
@@ -39,7 +47,18 @@ export const ProductDetails = (props) => {
                   <p className="short-description">{ /*prdc_arr.shortDescription */ }</p>
                   <p className="prdc-detail-date" >{val.first_brewed}</p>
                   <p className="prdc-price-detail">${ val.ibu }</p>
-                  <button type="button" className="add-to-cart" onClick={() => addPrdcFromDetail(mycart, prodc, val.name, val.ibu)}>add to cart</button> 
+                  <p>
+                    <textarea 
+                      
+                       id = "prdc-note" 
+                       style={{minHeight:"100px", minWidth:"200px", marginTop:"2rem", border:"3px solid dodgerblue"}}
+                       placeholder = "You can enter a note here"
+                       maxLength = "200"
+                       onChange ={ (e) => { testcheck = e.target.value; console.log(testcheck); } }
+                    />
+                  </p>
+                 
+                  <button type="button" className="add-to-cart" onClick={() => addPrdcFromDetail(mycart, prodc, val.name, val.ibu, testcheck)}>add to cart</button> 
                   <br/>
                   <HashLink to="/#products-display">
                     <button type="button" id="btn-continue-shopping" className="shoppingCart-btn" >
@@ -63,8 +82,13 @@ export const ProductDetails = (props) => {
       return getPrdcDetail;
     }
 
-    const addPrdcFromDetail = (mycart, prdc, name, price) => {
+    const addPrdcFromDetail = (mycart, prdc, name, price, note) => {
       //e.preventDefault();
+
+      //get the note from textarea
+      console.log(note);
+
+       
 
       //set the product
       const prdc_in_cart = { name: name, price: price, qty: 1 }
@@ -121,6 +145,7 @@ export const ProductDetails = (props) => {
       setCartTotal({total: new_total});
       
       auto_triger(); //auto click on the 'continue shopping'
+     
   }
 
 

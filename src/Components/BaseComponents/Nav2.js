@@ -103,7 +103,9 @@ const Nav2 = () => {
             <div className="nav-2" id="top-nav-2">
                 <input type="checkbox" id="check"/>
                 <label htmlFor="check"><i onClick={ nav2Clicked } className="fa fa-bars"></i></label>
-                <label className="logo">Logo</label>
+                
+                   <img className="img-logo" src={require('../../Img/cropped-logo.png')} alt="check mark" />
+               
                 <ul className = "ulnav2">
                     <li className="linav2"><HashLink to="/#reg-form" className="a-nav2 active">Home</HashLink></li>
                     <li className="linav2"><HashLink to="/#reg-form" className="a-nav2">Services</HashLink></li>

@@ -12,7 +12,7 @@ export const DisplayCartPrdcs = () => {
     const disPrdName = (cart) => {
         console.log("prd :: " + JSON.stringify(cart));
         
-        if(!cart.length) { return null;} 
+        if(!cart.length) { return null; } 
         
     
         let prdcNameInCart = cart.map((val, index)=>(
@@ -50,7 +50,7 @@ export const DisplayCartPrdcs = () => {
         //localStorage.removeItem("allprdcs");
         console.log(cart);
         //setCart(cart);
-        setReset([]); /*I use this so we can noticed instantly when the product 
+        setReset([]); /*I use this so we can notice instantly when the product 
                         is deleted from the cart. It doesn't really affect anything,
                         it just help to update the view. I must find a better way to this */
         
@@ -71,7 +71,7 @@ export const DisplayCartPrdcs = () => {
 
      
       //Get the new total price inside the cart
-      const arr_of_all_prdcs_price = cart.map((a) => a.price); //get only products price in array
+      const arr_of_all_prdcs_price = cart.map((val) => val.price); //get only products price in array
       
       const cart_total = arr_of_all_prdcs_price.reduce((total,val) => total + val);
       setCartTotal({total: cart_total});
@@ -97,7 +97,7 @@ export const DisplayCartPrdcs = () => {
 
      
       //Get the new total price inside the cart
-      const arr_of_all_prdcs_price = cart.map((a) => a.price); //get only products price in array
+      const arr_of_all_prdcs_price = cart.map((val) => val.price); //get only products price in array
       
       const cart_total = arr_of_all_prdcs_price.reduce((total,val) => total + val);
       setCartTotal({total: cart_total});
@@ -108,7 +108,7 @@ export const DisplayCartPrdcs = () => {
 
     return(
     <>
-       <span >Products: { disPrdName(cart) } </span>
+       <span > Products: { disPrdName(cart) } </span>
     </>
     )
 }
